@@ -1,0 +1,516 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:ital,wght@1,300&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 65.5%;
+  font-family: "Poppins", "sans-serif";
+  background-color: rgb(241, 237, 237);
+  min-height: 100vh;
+  margin: 0;
+  margin-right: 0;
+}
+
+header .contenedor-Logo {
+  display: flex;
+  justify-content: space-around;
+  background-color: #c2e6c2;
+  width: 100%;
+}
+
+header .contenedor-Logo h1 {
+  font-size: 30px;
+  color: #2c028f;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+header .contenedor-Logo span {
+  color: blueviolet;
+}
+
+header .contenedor-Logo .contenedor-usuario {
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+header .contenedor-Logo .contenedor-usuario a {
+  text-decoration: none;
+  list-style: none;
+  position: relative;
+}
+
+header .contenedor-Logo .contenedor-usuario .nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+header .contenedor-Logo .contenedor-usuario .nav .contenedor {
+  display: flex;
+  gap: 2rem;
+}
+
+header .contenedor-Logo .contenedor-usuario .nav .contenedor li {
+  list-style: none;
+}
+
+header .contenedor-Logo .contenedor-usuario .nav .contenedor .contenedor-menu > a {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+}
+
+header .contenedor-Logo .contenedor-usuario .nav .contenedor .contenedor-perfil > a {
+  font-size: 16px;
+  color: #2c028f;
+}
+
+header .contenedor-Logo .contenedor-usuario .nav .contenedor .fa-cart-shopping {
+  font-size: 2.5rem;
+  color: rgb(11, 90, 132);
+  padding-left: 1rem;
+  cursor: pointer;
+}
+
+header .contenedor-Logo .contenedor-usuario .nav .contenedor .contenedor-carito-compra {
+  display: flex;
+  flex-direction: column;
+}
+
+header .contenedor-Logo .contenedor-usuario .nav .contenedor .contenedor-carito-compra .text {
+  color: rgb(2, 2, 61);
+}
+
+header .contenedor-Logo .contenedor-usuario .nav .contenedor .contenedor-carito-compra .numero {
+  color: rgb(2, 2, 61);
+}
+
+header .contenedor-Logo .contenedor-usuario .nav .contenedor .contenedor-menu a::after {
+  width: 1.5rem;
+  height: 1px;
+  background-color: rgb(50, 49, 51);
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+header .contenedor-Logo .contenedor-usuario .nav ul > li > a:hover {
+  background-color: #c2e6c2;
+}
+
+header .contenedor-Logo .contenedor-usuario .nav ul li ul {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  position: absolute;
+  visibility: hidden;
+  padding: 12px 0px;
+  opacity: 0;
+  z-index: 10;
+  transition: all 300ms ease;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+header .contenedor-Logo .contenedor-usuario .nav ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+}
+
+header .contenedor-Logo .contenedor-usuario .nav ul li ul a {
+  display: block;
+  color: black;
+  padding: 5px;
+  margin-left: 15px;
+  margin-top: 6px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+header .contenedor-Logo .contenedor-usuario .nav ul li ul a:hover {
+  background: rgb(241, 237, 237);
+  padding-left: 10px;
+  transform: scale(1.1);
+}
+
+header .contenedor-navbar {
+  position: sticky;
+  background-color: #36028b;
+}
+
+header .contenedor-navbar .nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+header .contenedor-navbar .nav ul > li > a:hover {
+  background-color: #c2e6c2;
+}
+
+header .contenedor-navbar .nav #checkbox-menu,
+header .contenedor-navbar .nav .fa-bars {
+  display: none;
+}
+
+header .contenedor-navbar .nav .fa-bars {
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+header .contenedor-navbar .nav .buscador {
+  position: relative;
+  display: flex;
+  border: 2px solid;
+  color: white;
+  border-radius: 2rem;
+  background-color: white;
+  height: 4.4rem;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+header .contenedor-navbar .nav .buscador input {
+  outline: none;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0 2rem;
+  width: 22rem;
+  font-size: 2rem;
+  color: gray;
+  cursor: pointer;
+}
+
+header .contenedor-navbar .nav .buscador .btn-buscar {
+  border: none;
+  background-color: #36028b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  height: 100%;
+  cursor: pointer;
+}
+
+header .contenedor-navbar .nav .buscador .btn-buscar i {
+  font-size: 18px;
+  color: white;
+}
+
+header .contenedor-navbar .nav .buscador input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+header .contenedor-navbar .contenedor {
+  display: flex;
+  gap: 2rem;
+}
+
+header .contenedor-navbar .contenedor li {
+  list-style: none;
+}
+
+header .contenedor-navbar .contenedor #selected {
+  color: brown;
+  background-color: aqua;
+}
+
+header .contenedor-navbar .contenedor .contenedor-menu > a {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  position: relative;
+}
+
+header .contenedor-navbar .contenedor .contenedor-menu > a a::after {
+  width: 1.5rem;
+  height: 1px;
+  background-color: rgb(50, 49, 51);
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+header .contenedor-navbar .contenedor .contenedor-menu > a a::after {
+  opacity: 1;
+}
+
+header .contenedor-navbar .contenedor .contenedor-menu > a a:hover {
+  color: blue;
+}
+
+/***Imagen de Inicio***/
+.moda {
+  background-image: url(chica11.jpg);
+  height: 50rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.moda .texto-moda {
+  max-width: 85rem;
+  margin: 0 auto;
+  padding: 10rem 0;
+}
+
+.moda .texto-moda p {
+  color: blueviolet;
+  font-weight: 400;
+  font-size: 6.4rem;
+  font-family: lobster;
+  padding: 2rem 1rem;
+}
+
+.moda .texto-moda a {
+  color: white;
+  font-weight: 400;
+  font-size: 2rem;
+  font-family: lobster;
+  display: flex;
+  justify-content: right;
+  padding: 1rem 2rem;
+}
+
+.contenedor-prod {
+  max-width: 1200px;
+  padding: 10;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  contain: paint;
+}
+
+.contenedor-prod .contenedor-items {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-gap: 20px;
+  grid-row-gap: 25px;
+  width: 100%;
+  transition: 0.4s;
+  margin-right: 30px;
+}
+
+.contenedor-prod .contenedor-items .productos-01 {
+  max-width: 200px;
+  padding: 10px;
+  margin: auto;
+  background-color: white;
+  padding: 10px;
+  transition: 0.4s;
+  color: grey;
+}
+
+.contenedor-prod .contenedor-items .productos-01 .descripcion {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+}
+
+.contenedor-prod .contenedor-items .productos-01 .precio {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+}
+
+.contenedor-prod .contenedor-items .productos-01 .boton-agregar {
+  display: block;
+  margin: auto;
+  border: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  background: rgb(39, 163, 39);
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.contenedor-prod .contenedor-items .productos-01 .img-01 {
+  border-radius: 30px;
+}
+
+.contenedor-prod .contenedor-items .productos-01 .img-01 {
+  width: 100%;
+  cursor: pointer;
+}
+
+.contenedor-prod .contenedor-items .productos-01:hover {
+  box-shadow: 0 0 15px #2c028f;
+}
+
+.contenedor-prod .contenedor-items .productos-01:hover {
+  border: 1px solid;
+  color: #36028b;
+}
+
+.form-contacto {
+  height: 540px;
+  width: 450px;
+  padding: 50px 55px;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.form-contacto .contacto {
+  display: flex;
+  justify-content: center;
+  color: #0000ff;
+  font-size: 15px;
+}
+
+.form-contacto input {
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+}
+
+.form-contacto .input1 {
+  color: rgb(3, 63, 63);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-contacto .input1 label {
+  font-size: 14px;
+}
+
+.form-contacto .input1 .boton {
+  margin-top: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #2c028f;
+}
+
+.form-contacto .input1,
+.form-contacto textarea {
+  padding: 17px 25px;
+  border-radius: 25px;
+  background-color: aquamarine;
+  border: 2px solid;
+  outline: none;
+  justify-content: center;
+}
+
+.form-contacto input {
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+}
+
+footer .pie-pagina {
+  background-color: #20034f;
+  margin-top: 70px;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  margin-bottom: 0;
+  position: absolute;
+  padding: 5rem;
+  height: auto;
+}
+
+footer .pie-pagina .redesSociales a {
+  margin-top: 20px;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+}
+
+footer .pie-pagina form1 input {
+  width: 350px;
+  height: 45px;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  outline: none;
+  border: none;
+}
+
+footer .pie-pagina form1 button {
+  border-radius: 30px;
+  border: 2px solid;
+  padding: 10px 35px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+  margin: auto;
+}
+
+footer .pie-pagina .redes .derechos {
+  font-size: 14px;
+}
+
+footer .pie-pagina {
+  font-weight: 300;
+  letter-spacing: 1;
+  color: white;
+}
+
+@media screen and (max-width: 480px) {
+  .textarea {
+    width: 300px;
+    height: 300px;
+  }
+  .form-contacto {
+    width: 400px;
+    height: 500px;
+  }
+  .contenedor-navbar ul {
+    display: none;
+    flex-direction: column;
+  }
+  .fa-bars {
+    display: block;
+  }
+  .fa-bars:checked ~ ul {
+    display: block;
+  }
+  .buscador {
+    display: flex;
+    justify-content: center;
+  }
+  .contenedor-carito-compra {
+    margin-right: 10px;
+  }
+} 
+
+/*# sourceMappingURL=style.css.map */

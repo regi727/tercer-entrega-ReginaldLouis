@@ -1,0 +1,711 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:ital,wght@1,300&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/*** VARIABLES ****/
+$tipografia-general: arial, verdana, sans-serif;
+$tipografia-alternativa: 'Times New Roman', Times, serif;
+$color-primary: #20034f;
+$color-secondary: #c2e6c2;
+$font-size: 18px;
+$color-texto: rgb(241, 237, 237);
+/*** FIN VARIABLES ****/
+
+/*** DEFINIR EL MIXING ****/
+@mixin button-seach {
+    border: none;
+    background-color: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    height: 100%;
+    cursor: pointer;
+}
+
+@mixin barra-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+/*** FIN DEL MIXING ****/
+
+
+html {
+    font-size: 65.5%;
+    font-size: $tipografia-general;
+    background-color: $color-texto;
+    min-height: 100vh;
+    
+}
+
+header {
+    /**** MI CUENTA ****/
+
+    .contenedor-Logo {
+        display: flex;
+        justify-content: space-around;
+        background-color: $color-secondary;
+        width: 100%;
+
+        h1 {
+            font-size: 30px;
+            color: $color-primary;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+        }
+
+        span {
+            color: blueviolet;
+        }
+
+        .contenedor-usuario {
+            display: flex;
+            gap: 1rem;
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+                list-style: none;
+                position: relative;
+            }
+
+            .nav-cuenta {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 1rem 0;
+                width: 100%;
+
+                .contenedor {
+                    display: flex;
+                    gap: 2rem;
+
+                    li {
+                        list-style: none;
+                    }
+
+                    .contenedor-menu>a {
+                        text-decoration: none;
+                        font-size: 14px;
+                        padding: 14px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        position: relative;
+                    }
+
+                    .contenedor-perfil>a {
+                        font-size: $font-size;
+                        color: $color-primary;
+                    }
+
+                    .fa-cart-shopping {
+                        font-size: 2.5rem;
+                        color: $color-primary;
+                        cursor: pointer;
+                    }
+
+                    .contenedor-carito-compra {
+                        display: flex;
+                        flex-direction: column;
+
+                        .text {
+                            color: $color-primary;
+                            font-size: $font-size;
+                        }
+
+                        .numero {
+                            color: $color-primary;
+                            font-size: $font-size;
+                        }
+                    }
+
+                    .contenedor-menu a::after {
+                        width: 1.5rem;
+                        height: 1px;
+                        background-color: rgb(50, 49, 51);
+                        position: absolute;
+                        bottom: -3px;
+                        left: 50%;
+                        transform: translate(-50%, 50%);
+                        opacity: 0;
+                        transition: all .3s ease;
+                    }
+                }
+
+                ul>li>a:hover {
+                    background-color: #c2e6c2;
+                }
+
+                ul li ul {
+                    width: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    background: #ffffff;
+                    position: absolute;
+                    visibility: hidden;
+                    padding: 12px 0px;
+                    opacity: 0;
+                    z-index: 10;
+                    transition: all 300ms ease;
+                    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+                }
+
+                ul li:hover ul {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                ul li ul a {
+                    display: block;
+                    color: black;
+                    padding: 5px;
+                    margin-top: 6px;
+                    font-size: 16px;
+                    text-decoration: none;
+                }
+
+                ul li ul a:hover {
+                    background: rgb(241, 237, 237);
+                    padding-left: 10px;
+                    transform: scale(1.1);
+                }
+
+                /**** FIN MI CUENTA ****/
+            }
+        }
+    }
+
+    /**** BARRA DE NAVIGACION ****/
+    .contenedor-navbar {
+
+        background-color: $color-primary;
+
+        .nav {
+            @include barra-nav;
+
+            ul>li>a:hover {
+                background-color: #c2e6c2;
+            }
+
+            #checkbox-menu,
+            .fa-bars {
+                display: none;
+            }
+
+            .fa-bars {
+                color: white;
+                font-size: 20px;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+
+            .buscador {
+                position: relative;
+                display: flex;
+                border: 2px solid;
+                color: white;
+                border-radius: 2rem;
+                background-color: white;
+                height: 4.4rem;
+                overflow: hidden;
+                margin-right: 20px;
+
+                input {
+                    outline: none;
+                    display: flex;
+                    align-items: center;
+                    border: none;
+                    padding: 0 2rem;
+                    width: 22rem;
+                    font-size: 2rem;
+                    color: gray;
+                    cursor: pointer;
+                }
+
+                .btn-buscar {
+                    @include button-seach
+                }
+
+                .btn-buscar i {
+                    font-size: 18px;
+                    color: white;
+                }
+
+                input::-webkit-search-cancel-button {
+                    appearance: none;
+                }
+            }
+
+
+            .contenedor {
+                display: flex;
+                justify-content: space-between;
+                gap: 2rem;
+
+                li {
+                    list-style: none;
+                }
+
+                #selected {
+                    color: brown;
+                    background-color: aqua;
+                }
+
+                .contenedor-menu>a {
+                    text-decoration: none;
+                    font-size: 14px;
+                    padding: 14px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: white;
+                    position: relative;
+
+                    a::after {
+                        width: 1.5rem;
+                        height: 1px;
+                        background-color: rgb(50, 49, 51);
+                        position: absolute;
+                        bottom: -3px;
+                        left: 50%;
+                        transform: translate(-50%, 50%);
+                        opacity: 0;
+                        transition: all .3s ease;
+                    }
+
+                }
+
+                a::after {
+                    opacity: 1;
+                }
+
+                a:hover {
+                    color: blue
+                }
+            }
+        }
+
+
+
+
+
+    }
+
+}
+
+/***Imagen de Inicio***/
+.moda {
+    background-image: url(chica11.jpg);
+    height: 50rem;
+    background-size: cover;
+    background-position: center;
+
+    .texto-moda {
+        max-width: 85rem;
+        margin: 0 auto;
+        padding: 10rem 0;
+
+        p {
+            color: blueviolet;
+            font-weight: 400;
+            font-size: 6.4rem;
+            font-family: lobster;
+            padding: 2rem 1rem;
+        }
+
+        a {
+            color: white;
+            font-weight: 400;
+            font-size: 2rem;
+            font-family: lobster;
+            display: flex;
+            justify-content: right;
+            padding: 1rem 2rem;
+        }
+    }
+}
+
+.contenedor-prod {
+    max-width: 1200px;
+    padding: 40px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    contain: paint;
+
+    .contenedor-items {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        grid-gap: 15px;
+        grid-row-gap: 25px;
+        width: 100%;
+        transition: .4s;
+        margin-right: 30px;
+
+        .productos-01 {
+            max-width: 200px;
+            padding: 10px;
+            margin: auto;
+            background-color: white;
+            padding: 10px;
+            transition: .4s;
+            color: grey;
+
+            .descripcion {
+                display: block;
+                font-weight: bold;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            .precio {
+                display: block;
+                font-weight: bold;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            .boton-agregar {
+                display: block;
+                margin: auto;
+                border: none;
+                padding: 5px 10px;
+                font-size: 12px;
+                background: rgb(39, 163, 39);
+                border-radius: 5px;
+                cursor: pointer;
+                color: white;
+            }
+
+            .img-01 {
+                border-radius: 30px;
+            }
+
+            .img-01 {
+                width: 100%;
+                cursor: pointer;
+            }
+
+        }
+
+        .productos-01:hover {
+            box-shadow: 0 0 15px #2c028f;
+        }
+
+        .productos-01:hover {
+            border: 1px solid;
+            color: #36028b;
+            ;
+        }
+    }
+}
+
+/**** FORMULARIO DE CONTACTO***/
+.form-contacto {
+    height: 540px;
+    width: 450px;
+    padding: 50px 55px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 20px;
+    justify-content: center;
+
+    .contacto {
+        display: flex;
+        justify-content: center;
+        color: $color-primary;
+        font-size: $font-size;
+    }
+
+    input {
+        padding: 10px;
+        border: none;
+        border-radius: 15px;
+    }
+
+    .input1 {
+        color: rgb(3, 63, 63);
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        label {
+            font-size: 14px;
+        }
+
+        .boton {
+            margin-top: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #2c028f;
+        }
+
+    }
+
+    .input1,
+    textarea {
+        padding: 17px 25px;
+        border-radius: 25px;
+        background-color: aquamarine;
+        border: 2px solid;
+        outline: none;
+        justify-content: center;
+    }
+
+    input {
+        padding: 10px;
+        border: none;
+        border-radius: 15px;
+    }
+}
+
+.titulo-categoria {
+    display: flex;
+    justify-content: center;
+    color: $color-primary;
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.categoria-productos {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+
+    span {
+
+        color: white;
+        background-color: #54a454;
+        padding: .6rem 3rem;
+        font-size: $font-size;
+        text-transform: capitalize;
+        border-radius: 2rem;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    span:hover {
+        background-color: aquamarine;
+        color: blue;
+    }
+
+    span.categoria-active {
+        background-color: aquamarine;
+        color: blue;
+    }
+}
+
+/**** SECCION De seleccion****/
+
+.seleccion {
+    transition: .4s ease;
+    opacity: 1;
+    width: 35%;
+    border: 1px solid rgb(183, 181, 181);
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    margin-top: 20px;
+    background-color: white;
+
+    .cerrar {
+        font-size: 20px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+    }
+
+    .agregar-prod {
+        display: block;
+        padding: 20px;
+        margin: 20px;
+        width: 70%;
+        z-index: 1;
+
+        img {
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        p {
+            font-weight: bold;
+            color: grey;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        span {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #36028b46;
+        }
+
+        .fila {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .fila {
+            label {
+                display: block;
+                margin-bottom: 10px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .size {
+                select {
+                    padding: .3rem;
+                    font-size: 14px;
+                }
+            }
+
+            .boton-agregar {
+                padding: .3rem;
+                background-color: #008000;
+                border: none;
+                cursor: pointer;
+                font-size: 14px;
+                text-align: center;
+                color: white;
+                margin-left: 5px;
+
+            }
+
+            .boton-agregar:hover {
+                background: #36028b;
+            }
+
+        }
+
+
+    }
+
+}
+
+
+
+
+footer {
+    .pie-pagina {
+        background-color: #20034f;
+        margin-top: 70px;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        padding: 5rem;
+        height: auto;
+
+
+        .redesSociales {
+            margin-top: 15px;
+
+            a {
+                font-size: $font-size;
+                color: white;
+                text-decoration: none;
+                padding: 20px;
+            }
+        }
+
+        form1 {
+            input {
+                width: 80%;
+                height: 20%;
+                border-radius: 4px;
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 30px;
+                outline: none;
+                border: none;
+            }
+
+            button {
+
+                border-radius: 30px;
+                border: 2px solid;
+                padding: 10px 35px;
+                font-size: 2rem;
+                cursor: pointer;
+                display: flex;
+                text-align: center;
+                margin: auto;
+            }
+        }
+
+        .redes {
+            .derechos {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .pie-pagina {
+        font-weight: 300;
+        letter-spacing: 1;
+        color: white;
+    }
+
+}
+
+
+
+
+
+@media screen and (max-width:480px) {
+    .textarea {
+        width: 300px;
+        height: 300px;
+    }
+
+    .form-contacto {
+        width: 400px;
+        height: 500px;
+    }
+
+    .contenedor-navbar ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    .fa-bars {
+        display: block;
+    }
+
+    .fa-bars:checked~ul {
+        display: block;
+    }
+
+    .buscador {
+        display: flex;
+        justify-content: center;
+    }
+
+    .contenedor-carito-compra {
+        margin-right: 1.5rem;
+    }
+
+}

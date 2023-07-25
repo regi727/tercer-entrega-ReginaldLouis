@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/bootstrap.css">
+  
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: rgb(244, 243, 243);
+        }
+        .container-fluid ,.info > input{
+        padding: 15px;
+        font-size: 16px;
+      }
+      .container-fluid {
+            width: 90%;
+            min-width: 400px;
+            padding: 3.5rem 2rem;
+        }
+
+        @media (max-width:425px){
+            .fw-bold {
+                font-size: 1.7rem;
+                color: blue;
+            }
+        }
+    
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="container-fluid  w-50 d-grid justify-content-center bg-white mt-5 mb-5">
+
+        <h2 class="fw-bold text-center py-5">Regístrate</h2>
+        <form action="#">
+            <div class=" info mb-4 w-100 ">
+                <label for="name" class="form-label">Nombre Completo</label>
+                <input type="name" class="form-control" id="name" placeholder="Ingrese tu nombre."></input>
+            </div>
+
+            <div class=" info mb-4 w-100 ">
+                <label for="correo" class="form-label">Correo</label>
+                <input type="correo" class="form-control" id="password" placeholder="Ingrese tu correo."></input>
+            </div>
+            <div class="info mb-4 w-100">
+                <label for="adress" class="form-label">Direccion</label>
+                <input type="adress" class="form-control" id="adress" placeholder="1281,Vicuna Mackenna."></input>
+            </div>
+            <div class="info mb-4 w-100">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" placeholder="Contraseña."></input>
+            </div>
+
+            <div class="info mb-4 w-100">
+                <label for="pass" class="form-label">Repite Contraseña</label>
+                <input type="pass" class="form-control" id="pass" placeholder="Repite Contraseña."></input>
+            </div>
+            <div class="mb-4 form-check">
+                <input type="checkbox" name="conectar" class="form-check-input"> Al crear una cuenta estás aceptando
+                los terminos y
+                condiciones.</input>
+            </div>
+
+            <div class="d-grid w-100 ">
+                <button type="submit" class="btn btn-primary">Inicia sesión</button>
+            </div>
+            <div class="my-3 ">
+                <span>¿Ya tienes una cuenta? <a href="iniciar_sesion.html">Inicia sesión</a></span><br>
+               
+            </div>
+
+        </form>
+
+
+    </div>
+
+</body>
+
+</html>
+

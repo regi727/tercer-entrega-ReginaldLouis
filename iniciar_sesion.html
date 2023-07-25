@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9253dd2c49.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./CSS/bootstrap.css">
+    
+
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(244, 243, 243);
+            min-height: 100vh;
+        }
+
+        .container-fluid,
+        .info>input {
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        .container-fluid {
+            width: 90%;
+            min-width: 400px;
+            padding: 3.5rem 2rem;
+        }
+
+        .col-12 a {
+            text-decoration: none;
+            color: black
+        }
+
+        .col-12 a:hover {
+            color: white;
+            font-size: 20px;
+        }
+
+        @media (max-width:425px){
+            .fw-bold {
+                font-size: 1.7rem;
+                color: blue;
+            }
+        }
+    
+    </style>
+</head>
+
+
+
+<body>
+    
+    <div class="container-fluid  w-50 d-grid justify-content-center bg-white mt-5 mb-5">
+
+        <h2 class="fw-bold text-center py-5">Inicia sesión</h2>
+        <form action="#">
+            <div class=" info mb-4 w-100 ">
+                <label for="correo" class="form-label">Correo</label>
+                <input type="correo" class="form-control" id="password" placeholder="Ingrese tu correo."></input>
+            </div>
+
+            <div class="info mb-4 w-100">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" placeholder="Contraseña."></input>
+            </div>
+
+
+            <div class="d-grid w-100 ">
+                <button type="submit" class="btn btn-primary">Inicia sesión</button>
+            </div>
+            <div class="my-3 ">
+                <span>¿No tienes cuenta? <a href="registrar.html">Regístrate</a></span><br>
+                <br><span>¿Olvidaste tu contraseña? <a href="cambio_contrasena.html">Recupera contraseña</a></span>
+            </div>
+
+        </form>
+
+        <div class="container w-100 my-5">
+            <div class="row text-center">
+                <div class="col-12">Iniciar sesión con la cuenta</div>
+            </div>
+            <hr>
+            <div class="row">
+
+                <div class="col">
+                    <button class="btn btn-outline-secondary w-100 my-1">
+
+                        <div class="row align-iterms-center">
+                            <div class="col-2 d-none d-md-block">
+                                <img src="./iconos/google_icon.png" width="32px" alt="">
+                            </div>
+                            <div class="col-12 col-md-10 text-center">
+                                <a href="https://accounts.google.com/"> Google</a>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+   
+
+
+
+
+
+    <!--  
+ <form3>
+        <div class="IniciarSesion">
+            <div class="titulo_IniciarSesion">
+                <p>Inicia sesión</p>
+            </div>
+
+            <div class="padre2">
+
+                <div class="correo">
+                    <label for="correo">Email</label>
+                    <input type="text" name="correo" placeholder="E-mail">
+                </div>
+
+                <div class="contraseña">
+                    <label type="clave">Contraseña</label>
+                    <input type="password" name="pass" placeholder="Contraseña">
+                </div>
+                <div class="cuenta">
+                    <p><a href="./cambio_contrasena.html">¿Olvidaste tu contraseña?</a></p>
+
+                </div>
+                <input class="boton" type="submit" value="Inicia sesión">
+                <p>¿No tienes una cuenta? <a href="./registrar.html">Regístrate</a></p>
+            </div>
+
+
+            <div class="redes_sociales">
+                <div class="google">
+              <button type="button"><img src="./logos/google.png" alt=""></i><a href="https://www.gmail.com/mail/help/intl/es/about.html?iframe"></a>Google</button>
+                   
+                 
+                </div>
+
+                <div class="facbook">
+                    <img src="./logos/facebook.png" alt="facbook">
+                    <span>Facebook</span>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+    </form3>
+
+
+-->
+
+    <script src="./js/bootstrap.js"></script>
+</body>
+
+</html>
